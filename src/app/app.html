@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="sidebar" [class.hidden]="!isSidebarVisible">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="home" [class.full-width]="!isSidebarVisible">
+    <app-home (toggleSidebar)="toggleSidebar()"></app-home>
+  </div>
+</div>

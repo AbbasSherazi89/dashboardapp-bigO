@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css'; // Angular material setup
+@import 'material-icons/iconfont/material-icons.css'; // google icons
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.mat-mdc-menu-panel .mat-mdc-menu-content {
+  padding: 0 !important;
+}

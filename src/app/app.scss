@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  // overflow: hidden;
+}
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  padding: 20px;
+  background-color: #3e4c66;
+  color: white;
+  transition: transform 0.3s ease;
+}
+.sidebar.hidden {
+  transform: translateX(-100%);
+  width: 0;
+  min-width:0px;
+  padding: 0px;
+  visibility: hidden;
+}
+.home {
+  flex: 1;
+  transition: all 0.3s ease;
+  background-color: #f5f7fa;
+}
+.home.full-width {
+  width: 100%;
+  margin-left: 0;
+}
