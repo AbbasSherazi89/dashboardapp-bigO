@@ -18,6 +18,7 @@ export interface CardData {
   progressColor2?: string;
   userData?: {
     avatar: string;
+    avatarColor?: string;
     name: string;
     description: string;
     date: string;

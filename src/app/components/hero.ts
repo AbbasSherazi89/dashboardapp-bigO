@@ -21,7 +21,7 @@ import { CardData } from '../interfaces/card-data';
       <app-card [data]="ratingCard"></app-card>
 
       <!-- Users Card -->
-      <app-card [data]="ratingCard"></app-card>
+      <app-card class="full-width" [data]="userCard"></app-card>
     </div>
   `,
   styles: `
@@ -32,8 +32,10 @@ import { CardData } from '../interfaces/card-data';
       //  grid-template-columns: 1fr 3fr;
       gap: 20px;
       margin-bottom: 20px;
+    } 
+       .full-width {
+      grid-column: 2 / -1;
     }
-      
      @media (max-width: 768px) {
       .card-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -123,5 +125,47 @@ export class Hero {
     iconColor: '#f4c22b',
     progressColor: '#1dd8ce',
     progressColor2: '#9792d4',
+  };
+  userCard: CardData = {
+    type: 'user',
+    title: 'Recent Users',
+    icon: '',
+    userData: [
+      {
+        avatar: 'fa-solid fa-user-tie',
+        avatarColor:'#37aee4',
+        name: 'John Doe',
+        description: 'Software Developer',
+        date: '2023-10-15',
+      },
+      {
+        avatar: 'fa-solid fa-circle-user',
+        avatarColor:'#ff5a9d',
+        name: 'Jane Smith',
+        description: 'Product Designer',
+        date: '2023-10-14',
+      },
+      {
+        avatar: 'fa-solid fa-user-tie',
+        avatarColor:'#fcdbc5',
+        name: 'Bob Johnson',
+        description: 'Project Manager',
+        date: '2023-10-13',
+      },
+      {
+        avatar: 'fa-solid fa-circle-user',
+        avatarColor:'#ff5a9d',
+        name: 'Waqas Haider',
+        description: 'Product Designer',
+        date: '2023-10-14',
+      },
+       {
+        avatar: 'fa-solid fa-user-tie',
+        avatarColor:'#37aee4',
+        name: 'Mehdi Jan',
+        description: 'Website Developer',
+        date: '2023-10-15',
+      },
+    ],
   };
 }
