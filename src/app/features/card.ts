@@ -154,38 +154,33 @@ import { CommonModule } from '@angular/common';
         </div>
         }
         <!-- Type User Cards -->
-       @case ('user') {
+        @case ('user') {
         <div class="user-content">
           <mat-divider></mat-divider>
           <!-- Loop through each user in userData array -->
           @for (user of data.userData; track user; let last = $last) {
-            <div class="user-card-row">
-              <!-- Use mat-icon for avatar or display initials -->
-              <i [style.color]="user.avatarColor" [ngClass]="user.avatar"></i>
+          <div class="user-card-row">
+            <!-- Use mat-icon for avatar or display initials -->
+            <i [style.color]="user.avatarColor" [ngClass]="user.avatar"></i>
 
-              <div class="user-info">
-                <p>{{ user.name }}</p>
-                <p>{{ user.description }}</p>
-              </div>
-              <span>{{ user.date }}</span>
-              <div class="action">
-                <button class="reject-btn" mat-button (click)="onReject.emit(user)">
-                  Reject
-                </button>
-                <button class="approve-btn" mat-button (click)="onApprove.emit(user)">
-                  Approve
-                </button>
-              </div>
+            <div class="user-info">
+              <p>{{ user.name }}</p>
+              <p>{{ user.description }}</p>
             </div>
-            
-            <!-- Add divider if not the last item -->
-            @if (!last) {
+            <span>{{ user.date }}</span>
+            <div class="action">
+              <button class="reject-btn" mat-button (click)="onReject.emit(user)">Reject</button>
+              <button class="approve-btn" mat-button (click)="onApprove.emit(user)">Approve</button>
+            </div>
+          </div>
+
+          <!-- Add divider if not the last item -->
+          <!-- @if (!last) {
               <mat-divider></mat-divider>
-            }
+            } -->
           }
         </div>
-      }
-    }
+        } }
       </mat-card-content>
     </mat-card>
   `,
@@ -311,6 +306,10 @@ import { CommonModule } from '@angular/common';
       margin:20px 0;
     }
   }
+  .user-card-row:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
 
   .user-card-row{
     margin-top:20px;
@@ -344,8 +343,4 @@ export class Card {
   @Input() data!: CardData;
   @Output() onApprove = new EventEmitter<any>();
   @Output() onReject = new EventEmitter<any>();
-
-    getUserInitials(name: string): string {
-    return name.split(' ').map(part => part[0]).join('').toUpperCase();
-  }
 }
