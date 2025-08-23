@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   imports: [],
   template: `
     <div class="container">
+      <h2>Datta Able</h2>  
       <ul>
         <li>Dashboard</li>
         <li>Typography</li>
@@ -17,6 +18,9 @@ import { Component } from '@angular/core';
   
   .container{
     padding-top: 30px;
+    h2{
+      padding: 10px;
+    }
     ul li:hover{
       background-color: #eee;
       cursor:pointer;
@@ -24,7 +28,7 @@ import { Component } from '@angular/core';
     ul li{
       text-decoration: none;
       list-style: none;
-      padding:10px
+      padding:10px;
     }
   }
   `,
