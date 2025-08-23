@@ -5,12 +5,15 @@ import { Component } from '@angular/core';
   imports: [],
   template: `
     <div class="container">
-      <h2>Datta Able</h2>  
+      <div class="title">
+        <img src="assets/favicon.svg" alt="" />
+        <h2>Datta Able</h2>
+      </div>
       <ul>
-        <li>Dashboard</li>
-        <li>Typography</li>
-        <li>Login</li>
-        <li>Register</li>
+        <li><i class="fa-solid fa-house"></i> Dashboard</li>
+        <li><i class="fa-brands fa-typo3"></i> Typography</li>
+        <li><i class="fa-solid fa-right-to-bracket"></i> Login</li>
+        <li><i class="fa-solid fa-user-plus"></i>Register</li>
       </ul>
     </div>
   `,
@@ -18,17 +21,30 @@ import { Component } from '@angular/core';
   
   .container{
     padding-top: 30px;
-    h2{
+    .title{
       padding: 10px;
+      display:flex;
+      align-items: center;
+      gap:10px;
+
     }
     ul li:hover{
       background-color: #eee;
       cursor:pointer;
+      color:#3f4d67;
     }
     ul li{
       text-decoration: none;
       list-style: none;
       padding:10px;
+      display:flex;
+      align-items:center;
+      gap:15px;
+      i{
+        font-size: 15px;
+        height:15px;
+        width:15px;
+      }
     }
   }
   `,
