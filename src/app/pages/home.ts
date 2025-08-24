@@ -13,11 +13,6 @@ import { MaterialModule } from '../shared/material/material-module';
         <app-navbar (toggleSidebar)="onToggleSidebar()"></app-navbar>
       </div>
       <div class="mainContent">
-        <h4>Default</h4>
-        <p style="color:grey">
-          Home <mat-icon>arrow_forward_ios</mat-icon> Dashboard
-          <mat-icon>arrow_forward_ios</mat-icon> Default
-        </p>
         <app-hero></app-hero>
       </div>
       <div class="footer">
@@ -32,20 +27,7 @@ import { MaterialModule } from '../shared/material/material-module';
     display: flex;
     flex-direction: column;
  }
- .mainContent h4{
-   padding: 10px 16px;
- }
- .mainContent p{
-  display: flex;
-  align-items: center;
-  padding: 10px 16px;
-  margin-bottom:20px;
-  mat-icon{
-    font-size: 16px;
-    height:16px;
-    width:16px;
-  }
- }
+
   `,
 })
 export class Home {

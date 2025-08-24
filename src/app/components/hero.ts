@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
 import { Card } from '../features/card';
 import { CardData } from '../interfaces/card-data';
-
+import { MaterialModule } from '../shared/material/material-module';
 @Component({
   selector: 'app-hero',
-  imports: [Card],
+  imports: [Card, MaterialModule],
   template: `
+    <div class="herotop">
+      <h4>Default</h4>
+      <p style="color:grey">
+        Home <mat-icon>arrow_forward_ios</mat-icon> Dashboard
+        <mat-icon>arrow_forward_ios</mat-icon> Default
+      </p>
+    </div>
     <div class="card-grid">
       <!-- Type 1 Cards -->
       <app-card [data]="type1Card1"></app-card>
@@ -35,6 +42,20 @@ import { CardData } from '../interfaces/card-data';
     } 
        .full-width {
       grid-column: 2 / -1;
+    }
+    .herotop h4{
+      padding: 5px 16px;
+    }
+    .herotop p{
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+      margin-bottom:20px;
+      mat-icon{
+        font-size: 16px;
+        height:16px;
+        width:16px;
+      }
     }
      @media (max-width: 768px) {
       .card-grid {
@@ -133,35 +154,35 @@ export class Hero {
     userData: [
       {
         avatar: 'fa-solid fa-user-tie',
-        avatarColor:'#37aee4',
+        avatarColor: '#37aee4',
         name: 'John Doe',
         description: 'Software Developer',
         date: '2023-10-15',
       },
       {
         avatar: 'fa-solid fa-circle-user',
-        avatarColor:'#ff5a9d',
+        avatarColor: '#ff5a9d',
         name: 'Jane Smith',
         description: 'Product Designer',
         date: '2023-10-14',
       },
       {
         avatar: 'fa-solid fa-user-tie',
-        avatarColor:'#fcdbc5',
+        avatarColor: '#fcdbc5',
         name: 'Bob Johnson',
         description: 'Project Manager',
         date: '2023-10-13',
       },
       {
         avatar: 'fa-solid fa-circle-user',
-        avatarColor:'#ff5a9d',
+        avatarColor: '#ff5a9d',
         name: 'Waqas Haider',
         description: 'Product Designer',
         date: '2023-10-14',
       },
-       {
+      {
         avatar: 'fa-solid fa-user-tie',
-        avatarColor:'#37aee4',
+        avatarColor: '#37aee4',
         name: 'Mehdi Jan',
         description: 'Website Developer',
         date: '2023-10-15',
