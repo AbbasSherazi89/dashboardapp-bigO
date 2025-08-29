@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   imports: [],
   template: `
   <div class="footer">
-    <p>Sherazi , Built with ♥ for a smoother web presence.</p>
+    <p>Sherazi , Built with <span class="text-xl text-green-500"> ♥ </span> for a smoother web presence.</p>
     <p>Distributed by Sherazi</p>
   </div>
   `,
