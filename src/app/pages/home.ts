@@ -1,32 +1,17 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Navbar } from '../components/header/navbar';
-import { Footer } from '../components/footer/footer';
 import { Hero } from '../components/hero';
 import { MaterialModule } from '../shared/material/material-module';
+import { Layout } from "../layout/layout";
 
 @Component({
   selector: 'app-home',
-  imports: [Navbar, Footer, Hero, MaterialModule],
+  imports: [Hero, MaterialModule, Layout],
   template: `
-    <div class="container">
-      <div class="header">
-        <app-navbar (toggleSidebar)="onToggleSidebar()"></app-navbar>
-      </div>
-      <div class="mainContent">
-        <app-hero></app-hero>
-      </div>
-      <div class="footer">
-        <app-footer></app-footer>
-      </div>
-    </div>
+     <app-layout (toggleSidebar)="onToggleSidebar()">
+      <app-hero></app-hero>
+    </app-layout>
   `,
   styles: `
- 
- .container{
-    width:100%;
-    display: flex;
-    flex-direction: column;
- }
 
   `,
 })
@@ -35,6 +20,6 @@ export class Home {
 
   onToggleSidebar() {
     this.toggleSidebar.emit();
-    console.log('toggled');
   }
 }
+
