@@ -32,3 +32,17 @@
   overflow: auto; /* Content area scrolls */
   position: relative;
 }
+
+// Specifically target the media query
+@media (width >= 80rem) {
+  .container {
+    max-width: none !important; // Override the 80rem limit
+    width: 100% !important;
+  }
+}
+
+@media (width >= 96rem) {
+  .container {
+    max-width: none !important; // Override the 80rem limit
+  }
+}
