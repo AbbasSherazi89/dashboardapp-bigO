@@ -5,7 +5,7 @@ import { MaterialModule } from '../../shared/material/material-module';
   imports: [MaterialModule],
   template: `
     <button [matMenuTriggerFor]="menu" mat-icon-button>
-      <mat-icon>notifications_none</mat-icon>
+      <mat-icon matBadge="3" matBadgeSize="small" class="custom-badge">notifications_none</mat-icon>
     </button>
     <mat-menu #menu="matMenu" class="user-notification">
       <div class="noti-head">
