@@ -1,17 +1,29 @@
-import { Component, signal } from '@angular/core';
+import { Component, ViewChild  } from '@angular/core';
 import { Sidebar } from "./components/sidebar/sidebar";
-import { Home } from "./pages/home";
-import { Typography } from "./pages/typography";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [Home, Sidebar, Typography],
+  imports: [Sidebar, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-  // protected readonly title = signal('dashboard');
-  isSidebarVisible = true;
+ isSidebarVisible = true;
+
+  @ViewChild(RouterOutlet) outlet!: RouterOutlet;
+
+  ngAfterViewInit() {
+    // Listen for custom events from routed components
+    this.outlet.activateEvents.subscribe(() => {
+      const component = this.outlet.component;
+      if (component && 'toggleSidebar' in component) {
+        (component as any).toggleSidebar.subscribe(() => {
+          this.toggleSidebar();
+        });
+      }
+    });
+  }
 
   toggleSidebar() {
     this.isSidebarVisible = !this.isSidebarVisible;

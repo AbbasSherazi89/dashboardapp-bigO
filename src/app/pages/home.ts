@@ -35,5 +35,6 @@ export class Home {
 
   onToggleSidebar() {
     this.toggleSidebar.emit();
+    console.log('toggled');
   }
 }
